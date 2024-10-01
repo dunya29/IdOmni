@@ -139,7 +139,7 @@ h5, p {
     }
 }
 .item-form {  
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     [data-error] {
         font-size: 20px;
         font-weight: 500;
@@ -234,9 +234,9 @@ h5, p {
         }
     }
     &__footer {
-        margin-top: 60px;
+        margin-top: 40px;
         .checkbox {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
         .btn-main {
             width: 100%;
