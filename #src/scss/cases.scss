@@ -1,0 +1,309 @@
+.case-example__new--vid {
+    margin-bottom: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    video {
+        z-index: 1;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: url("../img/pages/case/loading-icon.svg") no-repeat;
+        background-size: 20px;
+        animation: rotateInf 2s infinite linear;
+        z-index: 0;
+    }
+}
+
+.works-card__img img {
+  transition: 0.6s ease-out;
+}
+.works-card__img:hover img {
+  transition: 0.6s ease-out;
+}
+.case__header .case-text__disc {
+    font-size: 20px;
+    a {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        &:hover::before {
+            opacity: 1;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        &:after {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin-left: 4px;
+            background: url(../img/svg/more.svg) center/16px no-repeat;
+            filter: invert(100%);
+            @media (max-width: 639px) {
+                background-size: 13px;
+            }
+        }
+    }
+    @media (max-width: 639px) {
+       font-size: clamp(16px,16px + (20 - 16) * ((100vw - 320px)/(640 - 320)),20px);
+    }
+}
+.case__header {
+    margin-top: 0;
+}
+.case__content > .case-text {
+    margin-top: 0;
+}
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    overflow: hidden;
+    transition: all .3s .1s ease-out;
+    &.open {
+        visibility: visible;
+        opacity: 1;
+        transition: all .3s ease-out;
+        .modal__content {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all .3s .1s ease-out;
+        }
+    }
+    .btn-main {
+        visibility: hidden;
+        opacity: 0;
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        @media (max-width: 1830px) {
+            bottom: 40px;
+        }
+    }
+    .case__body {
+        background-color: #fff;
+    }
+    .case-cards {
+        padding-top: 160px;
+        margin-top: -1px;
+        padding-bottom: 120px;
+        @media (max-width: 768px) {
+           padding-top: 120px;
+        }
+        @media (max-width: 639px) {
+           padding-top: 80px;
+        }
+    }
+    .case__header .h1,
+    .case__header .case-text__disc {
+        color: #fff;
+    }
+}
+.modal-loading-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+        fill: #fff;
+        transform-origin: center;
+        animation: rotate 3s linear infinite both;
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.modal__overlay {
+    padding: 80px 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.80);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+    @media (max-width: 1830px) {
+        padding: 80px 20px 20px ;
+    }
+    @media (max-width: 639px) {
+        padding: 60px 10px 20px ;
+    }
+}
+.modal__content {
+    width: 100%;
+    max-width: 1620px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .3s ease-out;
+}
+.modal__close {
+    padding: 0 4px;
+    border: 2px solid rgba(255, 255, 255, 0.60);
+    position: fixed;
+    top: 80px;
+    right: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all  .3s ease;
+    &:hover {
+        border-color: #fff;
+        svg {
+            stroke: #fff;
+        }
+    }
+    svg {
+        stroke: rgba(255, 255, 255, 0.60);
+        display: block;
+        width: 42px;
+        height: 42px;
+        pointer-events: none;
+        transition: all .3s ease;
+    }
+    @media (max-width:1830px) {
+        top: 20px;
+        right: 20px;
+        background: #000;
+        padding: 2px;
+        //border-radius: 50%;
+    }
+    @media (max-width: 639px) {
+    right: 10px;
+    top: 10px;
+    padding: 0 2px;
+    border: 1px solid #fff;
+    svg {
+        width: 32px;
+        height: 32px;
+        stroke: #fff;
+    }
+}
+}
+.js-pageup{
+    position: fixed;
+    bottom: 80px;
+    right: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease;
+    transform: translateY(10px);
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    &:hover {
+        svg {
+            stroke: #fff;
+        }
+    }
+    svg {
+        stroke: rgba(255, 255, 255, 0.60);;
+        display: block;
+        width: 54px;
+        height: 54px;
+        pointer-events: none;
+        transition: all .3s ease;
+    }
+    @media (max-width:1830px) {
+        right: 20px;
+        bottom: 40px;
+        background: #000;
+        padding: 2px;
+        border-radius: 50%;
+    }
+    @media (max-width: 639px) {
+    right: 10px;
+    svg {
+        width: 36px;
+        height: 36px;
+        stroke: #fff;
+    }
+}
+}
+.double-title {
+    position: relative;
+    @media (max-width: 768px) {
+        svg {
+           width: auto;
+           height: 78px; 
+        }  
+    }
+    @media (max-width: 639px) {
+        svg {
+            height: 60px;
+        }
+    }
+}
+.popup-body {
+    padding: 100px 0 80px;
+}
+.popup-req {
+    overflow-y: auto;
+}
+.popup.success-popup {
+    background: url(../img/svg/success-bg.svg) center/cover no-repeat, #fff;
+    text-align: center;
+    text-transform: uppercase;
+    transform: translateY(30px);
+    &.active {
+        transform: translateY(0);
+    }
+    .popup-body {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    p {
+        font-size: 44px;
+        font-weight: 600;
+        margin: 32px 0;
+    }
+    @media (max-width: 768px) {
+        p {
+            font-size: 32px;
+            margin: 23px 0;
+        }
+    }
+    @media (max-width: 639px) {
+        p {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+    }
+}

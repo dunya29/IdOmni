@@ -1,0 +1,23 @@
+<!--header-->
+@@if (page == true) {
+<header class="header">
+}
+@@if (page == false) {
+<header class="header header--log">
+}
+    <div class="header__content fixed-block">
+        <div class="container header__container">
+            <div class="header__body">
+                <a href="https://omniagency.ru/" class="header__logo">
+                    <svg class="">
+                        <use xlink:href="img/sprite.svg#logo"></use>
+                    </svg>
+                    <span class="header__logo-title">Omni</span>
+                </a>
+                @@if (page == true) {
+                <a href="#" class="h4 header__logOut">Выйти</a>
+                }
+            </div>
+        </div>
+    </div>
+</header>
