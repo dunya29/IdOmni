@@ -890,6 +890,12 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .item-doc__action {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
   .item-doc__action span {
     font-size: clamp(16px, 16px + 10 * (100vw - 320px) / 320, 20px);
   }

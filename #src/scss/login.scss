@@ -221,6 +221,9 @@
         @media (max-width: 1250px) {
             flex: 0 0 125px;
         }
+        @media (max-width: 639px) {
+            flex: 0 0 auto;
+        }
         span {
             font-size: 26px;
             font-weight: 600;
